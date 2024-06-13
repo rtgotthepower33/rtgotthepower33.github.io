@@ -5,6 +5,25 @@ const initSlider = () => {
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thum");
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
+    scrollbarThumb.addEventListener("mousedown", (e) =>{
+        const startX = e.clientX;
+        const thumbPosition = scrollbarThumb.offsetLeft;
+
+        const handleMouseMove = (e) =>{
+            const deltaX = e.clientX - startX;
+            const newThumbPosition = thumbPosition + deltaX;
+            scrollbarThumb.style.left = '${newThumbPosition}px'
+        }
+        const handleMouseUp = () =>{
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mouseUp", handleMouseUp);
+        }
+
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseUp", handleMouseUp);
+    });
+
     slideButtons.forEach(button => {
         button.addEventListener("click", () => {
             const direction = button.id === "prev-slide" ? -1 : 1;
