@@ -112,3 +112,23 @@ body{
     top: -10px;
     bottom: -10px;
 }
+
+@media (max-width: 102px){
+    .slider-wrapper .slide-button{
+        display: none!important;
+    }
+    
+    .slide-wrapper .image-list{
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .slider-wrapper .image-list .image-item{
+        width: 280px;
+        height: 380px;
+    }
+
+    .slider-scrollbar .scrollbar-thumb{
+        width: 20%;
+    }
+}
