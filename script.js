@@ -1,9 +1,12 @@
 const initSlider = () => {
-    const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+    const imageList = document.querySelector(".slider-wrapper .slide-button");
+    const slideButtons = document.querySelectorAll(".slider-wrapper .image-list");
 
     slideButtons.forEach(button => {
         button.addEventListener("click", () => {
-            console.log(button);
+            const direction = button.id === "prev-slide" ? -1 : 1;
+            const scrollAmount = imageList.clientWidth * direction;
+            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
         });
     });
 }
