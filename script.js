@@ -12,7 +12,14 @@ const initSlider = () => {
         const handleMouseMove = (e) =>{
             const deltaX = e.clientX - startX;
             const newThumbPosition = thumbPosition + deltaX;
-            scrollbarThumb.style.left = '${newThumbPosition}px'
+            const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+
+            scrollbarThumb.style.left = '${boundedPosition}px';
+            imageList.scrollLeft = scrollPosition;
         }
         const handleMouseUp = () =>{
         document.removeEventListener("mousemove", handleMouseMove);
