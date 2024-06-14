@@ -68,7 +68,7 @@ body{
     content: '';
     position: absolute;
     bottom: 5px;
-    width: 100%;
+    width: 0%;
     height: 3px;
     left: 50%;
     background: #00bfff;
@@ -76,6 +76,14 @@ body{
     transition: .3s;
 }
 
+.main-container nav li:hover{
+    color: #00bfff;
+}
+
+.main-container nav li:hover::after{
+    width: 80%;
+
+}
 
 .container{
     max-width: 1200px;
