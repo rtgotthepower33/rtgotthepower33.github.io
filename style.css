@@ -7,15 +7,15 @@
     box-sizing: border-box;
 }
 
-body{
-    color:#fff;
+body {
+    color: #fff;
     background: #111;
     font-family: 'Poppins', sans-serif;
-    display: flex-end;
-    align-items: flex-end;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     min-height: 100vh;
-    
 }
 
 .main-container{
