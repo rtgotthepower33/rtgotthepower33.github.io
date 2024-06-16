@@ -152,6 +152,11 @@ body {
     background: #1d1d1d;
 }
 
+.colorBox:hover{
+    background: #00bfff;
+    transition-duration: 0s;
+}
+
 .container{
     max-width: 1200px;
     width: 100%;
