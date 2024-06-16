@@ -157,6 +157,26 @@ body {
     transition-duration: 0s;
 }
 
+.backgroundAmim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack{
+    0%{
+        top: -60px;
+    }
+    100%{
+        top: 120%;
+    }
+}
+
 .container{
     max-width: 1200px;
     width: 100%;
