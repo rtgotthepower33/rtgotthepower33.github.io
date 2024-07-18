@@ -33,7 +33,7 @@ function showSlider(type){
     }
 
     clearTimeout(runTimeOut);
-    runTimeOut = settimeout(() =>{
+    runTimeOut = setTimeout(() =>{
         carouselDom.classList.remove('next');
         carouselDom.classList.remove('prev');
     }, timeRunning)
